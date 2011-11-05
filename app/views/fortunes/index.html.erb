@@ -1,0 +1,35 @@
+<% title "Wszystkie fortunki" %>
+
+<%= form_tag fortunes_path, :method => :get, :id => "fortunes_search" do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Szukaj", :name => nil %>
+  </p>
+<% end %>
+  <hr/>
+<% @fortunes.each do |fortune| %>
+<article class="index">
+  <div class="attribute">
+    <span class="name">Autor</span>
+    <span class="value"><%= fortune.source %></span>
+  </div>
+    <div class="attribute">
+    
+    <span class="value"><%= fortune.body %></span>
+  </div>
+    <div class="links">
+    <%= link_to 'Pokaż', fortune %> |
+    <%= link_to 'Edytuj', edit_fortune_path(fortune) %> |
+    <%= link_to 'Usuń', fortune, confirm: 'Czy na pewno?', method: :delete %>
+  </div>
+  <hr/>
+</article>
+<% end %>
+
+<div class="link">
+  <%= link_to 'Dodaj nową', new_fortune_path %>
+</div><hr/>
+
+<div id="pag">
+<%= paginate @fortunes %>
+</div>

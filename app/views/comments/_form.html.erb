@@ -1,0 +1,8 @@
+<%= simple_form_for [@fortune, @comment] do |f| %>
+<%= hidden_field_tag(:"comment[author]", current_user.name) %>
+  <b>Autor:</b> <%= current_user.name %>
+  
+ 
+  <%= f.input :body, :input_html => {:rows => 4, :cols => 40} %><br/>
+  <%= f.button :submit %>
+<% end %>
