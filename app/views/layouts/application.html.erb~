@@ -34,16 +34,26 @@
 
 <body>
   <header>
-     <%= content_tag :h1, "fortunka" %>
-
+    <a href="/"> <%= content_tag :h1, "Fortunki Rails" %></a>
+    
+<div class="twitter">
 <% if current_user %>
-  Welcome <%= current_user.name %>!
-  <%= link_to "Sign Out", signout_path %>
+  Witaj <%= current_user.name %>!
+  <%= link_to "wyloguj", signout_path %>
 <% else %>
-  <%= link_to "Sign in with Twitter", "/auth/twitter" %>
+  <%= link_to "Zaloguj się za pośrednictwem Twitter", "/auth/twitter" %>
+<% end %>
+</div>
+
+<% if Fortune.count>0 %>
+ <% random = Fortune.first(:offset => rand(Fortune.count)) %>
+<% else %>
+ 
 <% end %>
 
+<div class="random">
 
+</div>
 
   </header>
   <div role="main">

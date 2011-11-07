@@ -45,12 +45,19 @@
 <% end %>
 </div>
 
-
+<% if Fortune.count>0 %>
+ <% ran=1 %>
  <% random = Fortune.first(:offset => rand(Fortune.count)) %>
-
+<% else %>
+ <% ran=0 %>
+<% end %>
 
 <div class="random">
-<a href="/fortunes/<%= random.id %>">losuj</a>
+
+<% if ran==1 %>
+ <a href="/fortunes/<%= random.id %>">losuj</a>
+<% end %>
+
 </div>
 
   </header>
