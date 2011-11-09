@@ -14,8 +14,8 @@
     <span class="value"><%= @fortune.body %></span>
   </div>
   <div class="link">
-    <%= link_to 'Edytuj', edit_fortune_path(@fortune) %> |
-    <%= link_to 'Powrót', fortunes_path %>
+   <!-- <%= link_to 'Edytuj', edit_fortune_path(@fortune) %> |
+    <%= link_to 'Powrót', fortunes_path %> -->
   </div>
 </article>
 <hr/>
@@ -25,6 +25,7 @@
 <% end %>
 
 <% if current_user %>
+<hr/>
 <h2>Dodaj nowy komentarz</h2>
 <%= render :partial => 'comments/form' %>
 <% end %>

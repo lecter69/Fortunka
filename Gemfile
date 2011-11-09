@@ -12,6 +12,10 @@ gem "therubyracer"
 gem 'simple_form'
 gem 'omniauth'
 
+gem 'activeadmin'
+
+gem 'meta_search',    '>= 1.1.0.pre'
+
 gem 'ajaxful_rating', :git => 'git://github.com/edgarjs/ajaxful-rating.git', :branch => "rails3"
 
 # Gems used only for assets and not required
